@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <title>Simple Web Page</title>
+    <title>Hawx Redirect</title>
     <style>
         h1 {
             margin: 2em 0;
@@ -24,10 +24,9 @@
     <script type="text/javascript">
   var oktaSignIn = new OktaSignIn({
       baseUrl: "https://hawxservices.okta.com",
-      clientId: "0oa3v1g16rL3tsyY6697",
-      clientSecret: "wljW2V77G91kpRWJaLor1FqigDN_63aM1RSWJbhr",
+      clientId: "0oa3ymf2hryoAMTtu697",
     authParams: {
-        issuer: "https://hawxservices.okta.com/oauth2/default",
+      issuer: "https://hawxservices.okta.com/oauth2/default",
       responseType: ['token', 'id_token'],
       display: 'page'
     }
@@ -44,8 +43,7 @@
         oktaSignIn.tokenManager.add('idToken', idToken);
 
         window.location.hash='';
-        document.getElementById("messageBox").innerHTML = "Hello, " + idToken.claims.email + "! You just logged in! :)";
-      },
+        },
       function error(err) {
         console.error(err);
       }
