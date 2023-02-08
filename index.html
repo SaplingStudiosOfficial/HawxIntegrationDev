@@ -157,6 +157,7 @@
                                         for (let i = 0; i < groups.length + 1; i++) {
                                             if (response.data.some(obj => obj.title === groups[i].profile.name)) {
                                                 console.log(firstName + ", You are already a member of group " + groups[i].profile.name);
+                                                if (i === groups.length) { location.replace('https://accounts.pronto.io/'); }
                                             } else {
                                                 //Requests a list of all Chats within the Hawxservices Pronto Org
                                                 const orgChatsRequest = {
@@ -189,6 +190,8 @@
                                                                 .then(response => console.log(response))
                                                                 .catch(err => console.error(err));
 
+                                                            if (i === groups.length) { location.replace('https://accounts.pronto.io/'); }
+
                                                         } else {
 
                                                             async function GetNewList() {
@@ -220,6 +223,7 @@
                                                                         .then(response => console.log(response))
                                                                         .catch(err => console.error(err));
 
+                                                                    if (i === groups.length) { location.replace('https://accounts.pronto.io/'); }
                                                                 } else {
                                                                     const options = {
                                                                         method: 'POST',
@@ -254,6 +258,7 @@
                                                                             .catch(err => console.error(err));
                                                                     }
                                                                     newList(userId, newChatsData);
+                                                                    if (i === groups.length) { location.replace('https://accounts.pronto.io/'); }
                                                                 }
                                                             }
                                                             GetNewList();
@@ -277,7 +282,7 @@
                     }
 
                     getProfile();
-                    location.replace('https://accounts.pronto.io/');
+                    
                     return;
                 }
                 // If the user is not logged in, then render new login widget.
