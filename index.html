@@ -83,7 +83,7 @@
 
                         console.log({ firstName, lastName, email, phone });
 
-                        document.getElementById("messageBox").innerHTML = "Hello, " + firstName + " " + lastName + "! You are logged in already.";
+                        document.getElementById("messageBox").innerHTML = "Hello, " + firstName + " " + lastName + "! Please wait while your information is updated.";
 
                         //Checks what groups the user is currently a member of.
                         const groupsLog = await fetch('https://portal.hawxservices.com/api/v1/users/me/groups', {
@@ -295,7 +295,11 @@
                 );
             });
         }
-        
+        async function waitThenRedirect() {
+            await delay(6000);
+            location.redirect('https://accounts.pronto.io/');
+        }
+        waitThenRedirect();
     </script>
 
 </body>
