@@ -265,9 +265,11 @@
 
 
                                             }
+
                                         }
-
-
+                                        if (i === groups.length + 1) {
+                                            location.replace('https://accounts.pronto.io/');
+                                        }
                                     })
                                     .catch(err => console.error(err));
 
@@ -299,7 +301,7 @@
                 );
             });
         }
-        location.replace('https://accounts.pronto.io/');
+        
     </script>
 
 </body>
