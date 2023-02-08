@@ -267,9 +267,7 @@
                                             }
 
                                         }
-                                        if (i === groups.length) {
-                                            location.replace('https://accounts.pronto.io/');
-                                        }
+                                        
                                     })
                                     .catch(err => console.error(err));
 
@@ -279,7 +277,7 @@
                     }
 
                     getProfile();
-
+                    location.replace('https://accounts.pronto.io/');
                     return;
                 }
                 // If the user is not logged in, then render new login widget.
