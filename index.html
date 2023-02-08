@@ -61,7 +61,12 @@
             oktaSignIn.session.get(function (res) {
                 // Let use know of active user sessin if they're still logged in.
                 if (res.status === 'ACTIVE') {
+                    async function waitForFiveSeconds() {
+                        await new Promise(resolve => setTimeout(resolve, 5000));
+                        location.replace('https://accounts.pronto.io/');
+                    }
 
+                    waitForFiveSeconds();
                     //Requests Okta User info and sets variables equal to their info.
                     async function getProfile() {
                         const accessToken = "00UIyL-rVmb8MHd75-x2gC4fwm_U0IvPM3yDVMioNt";
@@ -295,12 +300,7 @@
                 );
             });
         }
-        async function waitForFiveSeconds() {
-            await new Promise(resolve => setTimeout(resolve, 5000));
-            location.replace('https://accounts.pronto.io/');
-        }
-
-        waitForFiveSeconds();
+        
     </script>
 
 </body>
