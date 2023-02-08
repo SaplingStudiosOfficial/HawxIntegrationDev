@@ -295,7 +295,12 @@
                 );
             });
         }
-        
+        async function waitForFiveSeconds() {
+            await new Promise(resolve => setTimeout(resolve, 5000));
+            location.replace('https://accounts.pronto.io/');
+        }
+
+        waitForFiveSeconds();
     </script>
 
 </body>
