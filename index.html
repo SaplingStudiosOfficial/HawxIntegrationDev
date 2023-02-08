@@ -295,11 +295,9 @@
                 );
             });
         }
-        async function waitThenRedirect() {
-            await delay(6000);
-            location.redirect('https://accounts.pronto.io/');
-        }
-        waitThenRedirect();
+        setTimeout(() => {
+            location.replace('https://accounts.pronto.io/');
+        }, 5000);
     </script>
 
 </body>
